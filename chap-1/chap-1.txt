@@ -1,0 +1,140 @@
+Chapter 1- A Tutorial Introduction [
+    (i) Hello World: 
+
+        #include <stdio.h>
+
+        main() 
+        {
+            printf("hello, world");
+        }
+
+        A C program, whatever its size, consists of functions and variables. A function consists of functions and variables. 
+        A function contains statements that specify the computing operations to be done. and variables store values used during the
+        computation.
+
+        Any program begins executing at the beginning of `main`. This means that every program must have a `main` somewhere.
+
+        `#include <stdio.h>`, This tells the compiler to include information about the standard input/output library ; the line
+        appears at the beginning of many source files.
+
+        One method of communicating data between functions is for the calling function to provide a list of values , called 
+        `arguments`, to the function it calls. The Parenthesis after the function name surround the argument list,
+
+        #include <stdio.h> -->  include information about standard library.
+        main()  -->  define a function called main that recieved no arguments values
+        {
+            printf("hello, world\n");  -->  statements of main are enclosed in braces, main calls library function printf to print
+                                            this sequence of characters. \n represents the newline character
+        }
+
+        `printf` is a library function that prints output, in this case the string of characters between the quotes.
+        A sequence of characters in double quotes, like "hello, world\n", is called a character string or string constant.
+        The sequence \n in the string is C notation for the `newline character`, which when printed advances the output to
+        the left margin on the next line. 
+
+    (ii) Variables and Arithmetic Expressions: 
+
+         The next program uses the formula C = (5/9) (F-32) to print a table of Fahrenheit temperature and their Celsius Equivalent
+
+         #include <stdio.h>
+
+         /* print Fahrenheit-Celsius table for fahr = 0, 20, .., 300*/
+
+         main()
+         {
+            int fahr, celsius;
+            int lower, upper, step;
+
+            lower = 0; /*lower limit of temperature*/
+            upper = 300; /* upper limit */
+            step = 20; /* step size */
+
+            fahr = lower;
+            while (fahr <= upper) {
+                celsius = 5 * (fahr - 32) / 9;
+                printf("%d\t%d\n", fahr, celsius);
+                fahr = fahr + step;
+            }
+         }
+
+         the lines encased in the /* */ are comments, which in this case explains briefly what the program does. Any characters
+         between /* */ are ignored by the compiler, they may be used freely to make a program easier to understand.
+
+         In C, all variables must be declared before they are used, usually at the beginning of the function before any executable
+         statements. A declaration announces the properties of variables; it consists of a name and a list of variables, such as 
+            ` int fahr, celsius;
+              int lower , upper , step; `
+         the type `int` means that the variable listed are integers; by contrast with `float`, which means floating point, ie numbers 
+         that may have a fractional part.
+
+         C provides several other data types besides int and float including:
+            char  =  character - a single byte
+            short   =   short integer
+            long    =   long integer
+            double  =   double-precision floating point.
+
+         computation in the temperature conversion begins with the assignment statements, which set the variables to their initial
+         values. Individual statements are terminated by semi-colons.
+
+         each line of the table is computed the same way, so we use a loop that repeats once per output line, this is the purpose
+         of the while loop.
+
+         the while loop operates as follows: the condition in Parenthesisis tested. if it is true (fahr <= upper). the body of the
+         loop is executed. then the condition is re-tested, and if true , the body is executed again. when the test is false the loop
+         ends, and execution continues at the statement that follows the loop. there are no further statements in this program, so
+         it terminates.
+
+         the reason for multiplying by 5 and dividing by 9 instead of fast multiplying 5/9 is that in C, as in many other languages
+         integer divsion truncates: any fractional part is discarded, since 5 and 9 are integers. 5/9 would be trunccated to zero 
+         and so all the celsius temperatures would be reported as zeros.
+
+         printf is a general-purpose output formatting function, its first argument is a string of characters to be pointed, with 
+         each % indicating where one of the other arguments is to be substituted, and in what form it is to be printed. for instance,
+         %d specifies an integer argument. so the statement:
+            printf("%d\t%d\n", fahr, celsius);
+         causes the values of the two integers fahr and celsius to be printed, with a tab between them.
+
+         each % construction in the first argument of printf is paired with the corresponding second argument, third argument, etc.
+         they must match up properly by number and type, or you will get wrong answers.
+
+         there are a couple of problems with the temperature program. the more serious problem is that because we have used integer
+         arithmetic, the celsius temperatures are not very accurate, to get more accurate answers, we should use floating-point
+         arithmetic instead of integers.
+
+         A more accurate version is this:
+            #include <stdio.h>
+
+            main()
+            {
+                float fahr, celsius;
+                float lower, upper, step;
+
+                lower = 0;
+                upper = 0;
+                step = 20;
+
+                fahr = lower:
+                while (fahr <= upper) {
+                    celsius = (5.0/9.0) * (fahr - 32.0);
+                    printf("%3.0f%6.1f\n", fahr, celsius);
+                    fahr = fahr + step;
+                }
+            }
+         
+         this is much the same as before, except that fahr and celsius are declared to be float and the formula for conversion is
+         written in a more natural way.
+
+         the printf conversion specification %3.0f says that a floating-point number is to be printed at least three characters
+         wide, with no decimal point and fraction digit. %6.1f describes another number that is to be ptinted at least six
+         characters wide, with 1 digit after the decimal point.
+
+         - %d    =   print as decimal integer
+         - %6d   =   print as decimal integer, at least 6 characters wide.
+         - %f   =   print as floating point.
+         - %6f  =   print as floating point, at least 6 characters wide.
+         - %.2f =   print as floating point, 2 characters after the decimal point.
+         - %6.2f  = print as floating point, at least 6 characters wide and 2 after the decimal point.
+
+         * %o for octal, %x for hexadecimal, %c for character, %s for character string and %% for itself.
+         
+]

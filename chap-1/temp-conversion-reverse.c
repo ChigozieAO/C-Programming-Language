@@ -1,20 +1,10 @@
 #include <stdio.h>
 
-/* print Celsius-Fahrenheit table for celsius = 0, 10, ..., 150; */
+/* print the conversion table in reverse and use the for loop*/
 
 int main() {
-    float celsius, fahr;
-    float lower, upper, step;
+    int fahr;
 
-    lower = 0;
-    upper = 150;
-    step = 10;
-
-    celsius = lower;
-    printf("Celsius - Fahrenheit Temperature scale\n");
-    while (celsius <= upper) {
-        fahr = (celsius * 9.0/5.0) + 32;
-        printf("%3.0f%6.1f\n", celsius, fahr);
-        celsius = celsius + step;
-    }
+    for (fahr = 300; fahr >= 0; fahr = fahr - 20)
+        printf("%3d%6.1f\n", fahr, (5.0/9.0) * (fahr - 32));
 }

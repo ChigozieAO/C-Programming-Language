@@ -136,5 +136,27 @@ Chapter 1- A Tutorial Introduction [
          - %6.2f  = print as floating point, at least 6 characters wide and 2 after the decimal point.
 
          * %o for octal, %x for hexadecimal, %c for character, %s for character string and %% for itself.
-         
+
+    (iii) The For Statement:
+
+         #include <stdio.h>
+
+         /*print Fahrenheit-Celsius table*/
+
+         main()
+         {
+            int fahr;
+
+            for (fahr = 0; fahr <= 300; fahr = fahr + 20)
+                printf("%3d%6.1f\n", fahr , (5.0/9.0) * (fahr - 32));
+         }
+
+         This last change is an instance of a general rule - in any context where it is permissible to use the value of some type,
+         you can use a more complicated expression of that type.
+
+         the `for` statement is a loop, a generalization of the while. if you compare it to the earlier while, its operation 
+         should be clear.
+
+         the choice between while and for is arbitrary, based on which seems clear. the for is usually appropriate for loops in
+         which the initialization and increment are single statements together in one place.    
 ]

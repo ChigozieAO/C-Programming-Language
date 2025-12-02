@@ -158,5 +158,33 @@ Chapter 1- A Tutorial Introduction [
          should be clear.
 
          the choice between while and for is arbitrary, based on which seems clear. the for is usually appropriate for loops in
-         which the initialization and increment are single statements together in one place.    
+         which the initialization and increment are single statements together in one place. 
+
+    (iv) Symbolic Constants
+
+         A #define line defines a symbolic name or symbolic constant to be a particular string of characters.
+
+         #define name replacement list
+
+         Thereafter any occurence of name (not in qoutes and not part of any name) will be replaced by the corresponding 
+         replacement text. the name has the same form as a variable name: a sequence of letters and digits that begins with a 
+         letter . the replacement text can be any sequence of characters, it is not limited to numbers.
+
+         #include <stdio.h>
+
+         #define LOWER 0
+         #define UPPER 300
+         #define STEP 20
+
+         main()
+         {
+            int fahr;
+
+            for (fahr = LOWER; fahr <= UPPER; fahr = fahr + STEP)
+                printf("%3d%6.1f\n", fahr, (5.0/9.0) * (fahr - 32))
+         }
+
+         The quantities LOWER, UPPER and STEP are symbolic constants not variables, so they do not appear in declaratios.
+         symbolic constants names are conventionally written in upper case so they can be readily distinguished from lower case
+         variable names. Notice that there is no semi-colon at the end of a #define line. 
 ]

@@ -187,4 +187,41 @@ Chapter 1- A Tutorial Introduction [
          The quantities LOWER, UPPER and STEP are symbolic constants not variables, so they do not appear in declaratios.
          symbolic constants names are conventionally written in upper case so they can be readily distinguished from lower case
          variable names. Notice that there is no semi-colon at the end of a #define line. 
+
+    (v) Character Input and Output:
+
+         1, File Copying - 
+            read a character
+                While (character is not end-of-line indicator)
+                output the character just read
+                read a character
+
+            converting this into C gives 
+
+            #include <stdio.h> 
+
+            /*copy input to output; 1st version*/
+
+            main() 
+            {
+                int c;
+                c = getchar()
+
+                while (c != EOF) {
+                    putchar(c);
+                    c = getchar();
+                }
+            }   
+
+            #include <stdio.h>
+
+            /*copy input to output; 2nd version*/
+
+            main () 
+            {
+                int c;
+
+                while ((c = getchar()) != EOF)
+                    putchar(c);
+            }
 ]

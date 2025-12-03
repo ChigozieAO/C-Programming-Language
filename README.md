@@ -13,4 +13,4 @@ Chapters and their Exercises
 4: Modify the temperature conversion program to print the table in reverse order, that is, from 300 degrees to 0
 (temp-conversion-reverse.c);
 5: Write a program to print the value of EOF (get-char.c);
-6:
+6: Write a program to count blanks, tabs, and newlines (tab-blanks-line-count.c)

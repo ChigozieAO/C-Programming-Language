@@ -19,3 +19,4 @@ Chapters and their Exercises
 8: Write a program to copy its input to its output, replacing each tab by \t, each
 backspace by \b, and each backslash by \\. This makes tabs and backspaces visible in an
 unambiguous way (inp-out-replace-tab-slash.c)
+9: Write a program that prints its input one word per line (one-word-line.c)

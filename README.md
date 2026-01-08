@@ -22,3 +22,10 @@ unambiguous way (inp-out-replace-tab-slash.c)
 9: Write a program that prints its input one word per line (one-word-line.c)
 10: Rewrite the temperature conversion program of Section 1.2 to use a function
 for conversion. (FahrToCels-func.c)
+11: Revise the main routine of the longest-line program so it will correctly print the
+length of arbitrary long input lines, and as much as possible of the text (printLongestAndLen.c).
+12 : Write a program to print all input lines that are longer than 80 characters (printInputLongerThan80.c).
+13 : Write a program to remove trailing blanks and tabs from each line of input, and
+to delete entirely blank lines (removeBlankTabsSpace.c).
+14 : Write a function reverse(s) that reverses the character string s. Use it to
+write a program that reverses its input a line at a time (reverseTheCharacter.c).

@@ -29,3 +29,10 @@ length of arbitrary long input lines, and as much as possible of the text (print
 to delete entirely blank lines (removeBlankTabsSpace.c).
 14 : Write a function reverse(s) that reverses the character string s. Use it to
 write a program that reverses its input a line at a time (reverseTheCharacter.c).
+15 : Write a program detab that replaces tabs in the input with the proper number
+of blanks to space to the next tab stop. Assume a fixed set of tab stops, say every n columns.
+Should n be a variable or a symbolic parameter? (detab.c).
+16 : Write a program entab that replaces strings of blanks by the minimum number
+of tabs and blanks to achieve the same spacing. Use the same tab stops as for detab. When
+either a tab or a single blank would suffice to reach a tab stop, which should be given
+preference? (entab.c).
